@@ -1,6 +1,7 @@
 # The Great Suspender Recovery
 
 Ironically enough The Great suspender ended up not being so great,
+
 and got suspended from google extensions store.
 
 For having malicious intent code inside of it after ownership transfer.
@@ -71,7 +72,7 @@ example: `5 Feb 2021 7:14am (12 windows, 287 tabs) [export] [save]`
 Click `[export]`, that will save session.txt file of the form:
 ```
 ...
-chrome-extension://<EXTENSION_ID?>#ttl=<TAB_TITLE?>&pos=0&uri=https://lwn.net/Kernel/Index/
+chrome-extension://<EXTENSION_ID?>#ttl=<TAB_TITLE?>&pos=0&uri=<TAB_URL>
 chrome-extension://<EXTENSION_ID?>#ttl=<TAB_TITLE>>&pos=0&uri=<TAB_URL>
 ...
 ```
@@ -98,9 +99,17 @@ Pseudocode:
   * Return new substring `[&pos&uri=.length(), string.length()]`
 * Persist new collection of the urls to the fs.
 
+### Implementation
+
 The source code for the script[s], located at the `script/<platform>`
 
 `<platform>` being implementation language
+
+I am providing rust script i've cooked up in a hurry [here](script/rust)
+
+If you feel charitable — contribute to the repository with the recovery script
+
+implementation in programming language of your choice, for others to use.
 
 ## Thanks
 
